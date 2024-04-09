@@ -1,17 +1,20 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-  }
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
 
- .background{
+}
+
+.background {
   width: 100%;
   height: 100vh;
-  overflow: hidden;
+
   position: fixed;
- }
-.background div{
+}
+
+.background div {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -19,274 +22,324 @@ body, html {
   opacity: 1;
   background-size: cover;
   background-position: center center;
- 
+
 }
 
 
-  /* the baground and body ends here */
-.wrapper{
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
-    width: 100%;
-    z-index: 10;
-}
+/* the baground and body ends here */
+.wrapper {
+  position: fixed;
+  display: flex;
+  justify-content: center;
 
-.outline{
-    width: 500px;
-    height: 600px;
-    background-color: white;
-    border: 1px solid #9b9b9b;
-    padding: 10px;
-    border-radius: 22px;
-}
-form{
+  overflow-y: scroll;
   height: 100%;
+  width: 100%;
+  z-index: 10;
 }
+
+.outline {
+  margin-top: 40px;
+  width: 30%;
+  min-width: 340px;
+  height: fit-content;
+
+  background-color: white;
+  border: 1px solid #9b9b9b;
+  padding: 10px;
+  border-radius: 22px;
+}
+
 
 /* outline ends here  */
-.gamemode{
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+.gamemode {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
-.gamemode div{
-   
-    width: 100%;
-   
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+
+.gamemode div {
+
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
-.gamemode div h3{
-   margin-right: 70%;
-   font-weight: 100;
-   font-family: 'barlow', sans-serif;
-   font-size: 20px;
+
+.gamemode div h3 {
+  margin-right: 70%;
+  font-weight: 100;
+  font-family: 'barlow', sans-serif;
+  font-size: 20px;
+  text-wrap: nowrap;
 }
-.gamemode button{
-    border: 1px solid #d1d1d1;
-    height: 50px;
-    width: 20%;
-    border-radius: 10px;
-    font-size: 25px;
-    font-family: 'barlow', sans-serif;
-    background-color: #f1f1f1;
+
+.gamemode button {
+  border: 1px solid #d1d1d1;
+  height: 7vh;
+  width: 20%;
+  border-radius: 10px;
+  font-size: 25px;
+  font-family: 'barlow', sans-serif;
+  background-color: #f1f1f1;
 }
-.gamemode button:hover{
-    background-color: #d3d3d3;
-    border: 1px solid #818181;
+
+.gamemode button.selected {
+  background-color: rgb(108, 196, 101);
+  color: white;
 }
+
+.gamemode button:not(.selected):hover {
+  background-color: #d3d3d3;
+  border: 1px solid #818181;
+}
+
 /* gamemode 501 and so on ends here */
 
-.player-system{
-    width: 100%;
-    height: 55%;
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-   
-    align-items: center;
-}
-.playertext{
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-.player-system div h3{
-    margin-right: 78%;
-    font-weight: 100;
-    font-family: 'barlow', sans-serif;
-    font-size: 20px;
-}
-.players{
-    width: 80%;
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    
-    height: 50%;
-}
-input{
-    width: 90%;
-    height: 30px;
-    border: 2px solid #cccccc;
-    border-radius: 10px;
-    font-size: 25px;
-    padding: 10px;
-}
-.input2{
-    width: 77%;
+.player-system {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
 }
 
-.extra_players{
-    display: flex;
-    align-items: center;
-    align-content: center;
+.playertext {
+
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
+
+.player-system div h3 {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  margin-right: 78%;
+  font-weight: 100;
+  font-family: 'barlow', sans-serif;
+  font-size: 20px;
+}
+
+.players {
+  width: 90%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  flex-direction: column;
+  padding: 10px;
+  height: 20%;
+}
+
+input {
+  width: 90%;
+  height: 4vh;
+  border: 2px solid #cccccc;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 10px;
+  margin: 14px;
+}
+
+.input2 {
+  width: 80%;
+  
+  margin: 10px 0;
+}
+
+.extra_players {
+  display: flex;
+  width: 100%;
+  align-items: center;
+justify-content: space-around;
+
+}
+
 /* player pic ends here */
 
 .x-container {
-	
-	width: 40px;
-	height: 100%;
-	position: relative;
 
-  }
-  
-  .x {
-	position: absolute;
-        top: 50%;
-        left: 80%;
-	transform: translate(-50%, -50%);
-	width: 50px;
-	height: 20px;
-	cursor: pointer;
-  }
-  
-  .x::before,
-  .x::after {
-	content: '';
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 50%;
-	height: 1px; /* Adjust thickness */
-	background-color: rgb(0, 0, 0);
-	transform-origin: center;
-	transition: background-color .8s ease; 
-  }
-  
-  .x::before {
-	transform: translate(-50%, -50%) rotate(45deg);
-  }
-  
-  .x::after {
-	transform: translate(-50%, -50%) rotate(-45deg);
-  }
-  
-  /* Red circle with white X upon hover */
-  .x:hover .x::before,
-  .x:hover .x::after {
-	background-color: white;
-	
-  }
-  
-  .x:hover::before,
-  .x:hover::after {
-	background-color: white;
-	
-  }
-  
-  .x:hover::before {
-	content: '';
-	width: 65%;
-	height: 2px;
-  }
-  
-  .x:hover::after {
-	width: 65%;
-	height: 2px;
-	font-size: 20px;
-  }
-  
-  .x:hover {
-	border-radius: 50%; /* Turn into a circle */
-	background-color:  rgb(201, 69, 69); /* Red background */
-	width: 50px; /* Adjust width */
-	height: 50px; /* Adjust height */
-	transform: translate(-50%, -50%); /* Center */
-	transition: background-color .8s ease;
-  }
-  .x-container:hover .x::before,
+  width: 40px;
+  height: 100%;
+  position: relative;
+
+}
+
+.x {
+  position: absolute;
+  top: 50%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.x::before,
+.x::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 1px;
+  /* Adjust thickness */
+  background-color: rgb(0, 0, 0);
+  transform-origin: center;
+  transition: background-color .8s ease;
+}
+
+.x::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.x::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* Red circle with white X upon hover */
+.x:hover .x::before,
+.x:hover .x::after {
+  background-color: white;
+
+}
+
+.x:hover::before,
+.x:hover::after {
+  background-color: white;
+
+}
+
+.x:hover::before {
+  content: '';
+  width: 65%;
+  height: 2px;
+}
+
+.x:hover::after {
+  width: 65%;
+  height: 2px;
+  font-size: 20px;
+}
+
+.x:hover {
+  border-radius: 50%;
+  /* Turn into a circle */
+  background-color: rgb(201, 69, 69);
+  /* Red background */
+  width: 50px;
+  /* Adjust width */
+  height: 50px;
+  /* Adjust height */
+  transform: translate(-50%, -50%);
+  /* Center */
+  transition: background-color .8s ease;
+}
+
+.x-container:hover .x::before,
 .x-container:hover .x::after {
-  transition: background-color 0.3s ease; /* Smooth transition for background-color */
+  transition: background-color 0.3s ease;
+  /* Smooth transition for background-color */
 }
 
 /* x sign ends here */
 
 .plus-sign {
-    width: 20px;
-    height: 20px;
-    position: relative;
-  }
-  
-  .plus-sign::before,
-  .plus-sign::after {
-    content: '';
-    position: absolute;
-    background-color: grey;
-  }
-  
-  .plus-sign::before {
-    width: 100%;
-    height: 6px;
-    top: 50%;
-    left: 0;
-    margin-top: -3px; /* half of the height to center vertically */
-  }
-  
-  .plus-sign::after {
-    width: 6px;
-    height: 100%;
-    top: 0;
-    left: 50%;
-    margin-left: -3px; /* half of the width to center horizontally */
-  }
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
 
- 
-  .addplayer-continer{
-    width: 75%;
+.plus-sign::before,
+.plus-sign::after {
+  content: '';
+  position: absolute;
+  background-color: grey;
+}
 
-  }
-  .addplayer{
-    width: 40%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    font-family: 'barlow', sans-serif;
-    font-size: 20px;
-  }
-  
-   .addplayer:hover .plus-sign::after, .addplayer:hover .plus-sign::before {/* when hovered it makes the plus sign green */
-    background-color: rgb(108, 196, 101); 
-  }
-  .addplayer:hover a {
-    color: rgb(108, 196, 101);
-  }
-  .addplayer a{
-    margin-left: 10px;
-    color: rgb(109, 109, 109);
-  }
+.plus-sign::before {
+  width: 100%;
+  height: 6px;
+  top: 50%;
+  left: 0;
+  margin-top: -3px;
+  /* half of the height to center vertically */
+}
 
-  /* addplayeer buttion ends here */
-  .start-container{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: #818181;
-   
-    
-  }
-  .start-container button{
-    cursor: pointer;
-    height: 60px;
-    width: 70%;
-    border-radius: 20px;
-    font-size: 20px;
-    border: 1px solid #acacac;
-    font-family: 'barlow', sans-serif;  
-    background-color: rgb(108, 196, 101);
-    color: white;
-    font-weight: 600;
-    transition: transform 0.12s ease, scale 0.12s ease-in; /* Added scale transition */
-  }
-  
-  .start-container button:active {
-    transform: translateY(2px) scale(0.95); /* Adjusted transform */
-  }
+.plus-sign::after {
+  width: 6px;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  margin-left: -3px;
+  /* half of the width to center horizontally */
+}
+
+
+.addplayer-continer {
+  width: 80%;
+
+}
+
+.addplayer {
+
+  width: fit-content;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-family: 'barlow', sans-serif;
+  font-size: 20px;
+}
+
+.addplayer:hover .plus-sign::after,
+.addplayer:hover .plus-sign::before {
+  /* when hovered it makes the plus sign green */
+  background-color: rgb(108, 196, 101);
+}
+
+.addplayer:hover a {
+  color: rgb(108, 196, 101);
+}
+
+.addplayer a {
+
+  margin-left: 10px;
+  color: rgb(109, 109, 109);
+}
+
+/* addplayeer buttion ends here */
+.start-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: #818181;
+  margin-top: 30px;
+  margin-bottom: 15px;
+
+}
+
+.start-container button {
+  cursor: pointer;
+  height: 60px;
+  width: 70%;
+  border-radius: 20px;
+  font-size: 20px;
+  border: 1px solid #acacac;
+  font-family: 'barlow', sans-serif;
+  background-color: rgb(108, 196, 101);
+  color: white;
+  font-weight: 600;
+  transition: transform 0.12s ease, scale 0.12s ease-in;
+  /* Added scale transition */
+}
+
+.start-container button:active {
+  transform: translateY(2px) scale(0.95);
+  /* Adjusted transform */
+}

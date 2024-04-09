@@ -95,4 +95,6 @@ document.getElementById('startGameButton').addEventListener('click', updatePlaye
 
  // Initial update of the visibility of the "Add Player" button
  updateAddPlayerButtonVisibility();
- 
+ document.addEventListener('DOMContentLoaded', function() {
+   addPlayer();
+});

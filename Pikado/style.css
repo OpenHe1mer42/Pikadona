@@ -43,7 +43,7 @@ html {
   width: 30%;
   min-width: 340px;
   height: fit-content;
-
+  
   background-color: white;
   border: 1px solid #9b9b9b;
   padding: 10px;
@@ -342,4 +342,98 @@ justify-content: space-around;
 .start-container button:active {
   transform: translateY(2px) scale(0.95);
   /* Adjusted transform */
+}
+/* 
+THE SECOND PAGE THE SCORING PAGE STARTS HERE ITS ALL BELOW  */
+.container{
+  opacity: 0;
+  width: 80%;
+  height: 80%;
+  z-index: 100;
+  display: none;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.playeroutline{
+  background-color: white;
+  width: 25vw;
+  height: 35%;
+  min-height: 80px;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 10px;
+  border: 1px solid #727272;
+  min-width: 200px;
+}
+
+.playername{
+
+  width: fit-content;
+  min-width: 100px;
+  border-radius: 20px;
+  padding: 5px 2vw;
+  font-size: 2.5vh;
+  border: 1px solid #727272;
+}
+
+
+.playername h2{
+  font-family: 'barlow', sans-serif;
+  font-weight: 300;
+  
+  margin: 0;
+}
+.score{
+  font-size: 8vh;
+  
+  align-items: center;
+  display: flex;
+  height: 75%;
+  justify-content: end;
+
+}
+.score h1{
+  margin: 0;
+  font-family: 'barlow', sans-serif;
+  font-weight: 500;
+  margin-right: 15%;
+}
+
+.ribonicontainer{
+  position: fixed;
+  opacity: 0;
+  bottom: 0;
+  height: 20%;
+  width: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  
+}
+.riboni{
+  width: 39%;
+  height: 12vh;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.scoreinput{
+  width: 20%;
+  border-radius: 50px;
+  background-color: #ececec45;
+  font-size: 42px;
+}
+
+.addscore{
+  background-color: rgb(108, 196, 101);
+  border-radius: 10px;
+  width: 25%;
+  height: 8vh;
+  border: 2px solid #ababab;
+  font-size: 25px;
+  color: white;
 }

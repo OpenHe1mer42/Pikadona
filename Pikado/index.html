@@ -61,38 +61,45 @@
         
       </div>
       <div class="container" id="container">
-        <div class="playeroutline">
+        <div class="playeroutline" id="playercard1">
           <div class="playername">
             <h2 id="Player1">Player 1</h2>
           </div>
-          <div class="score">
-            <h1  id="score">501</h1>
-          </div>
-        </div>
-        <div class="playeroutline">
-          <div class="playername">
-            <h2  id="Player2">Player 2</h2>
+          <div class="darts">
+            <div class="circleouter filled"></div>
+            <div class="circleouter"></div>
+            <div class="circleouter"></div>
           </div>
           <div class="score">
-            <h1  id="score">501</h1>
+            <h1  id="score1" class="scorepoint">501</h1>
           </div>
         </div>
 
-        <div class="playeroutline">
+        <div class="playeroutline" id="playercard2">
+          <div class="playername">
+            <h2  id="Player2">Player 2</h2>
+          </div>
+         
+          <div class="score">
+            <h1  id="score2" class="scorepoint">501</h1>
+          </div>
+        </div>
+
+        <div class="playeroutline" id="playercard3">
           <div class="playername">
             <h2  id="Player3">Player 3</h2>
           </div>
           <div class="score">
-            <h1  id="score">501</h1>
+            <h1  id="score3" class="scorepoint">501</h1>
           </div>
         </div> 
 
-        <div class="playeroutline">
+        <div class="playeroutline" id="playercard4">
           <div class="playername">
             <h2  id="Player4">Player 4</h2>
           </div>
           <div class="score">
-            <h1 id="score">501</h1>
+            <h1 id="score4" class="scorepoint">501</h1>
           </div>
         </div>
 
@@ -109,10 +116,10 @@
           <button class="addscore" id="menu">
             Menu
           </button>
-          <input class="scoreinput">
+          <input class="scoreinput" id="scoreinput" placeholder="Score">
 
         </input>
-          <button class="addscore">
+          <button class="addscore" id="addscore">
             Play
           </button>
         </div>

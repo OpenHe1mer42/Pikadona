@@ -74,7 +74,7 @@ let player4Name = '';
  // Function to add a new player
  function addPlayer() {
    var playerCount = document.querySelectorAll('.extra_players').length;
-
+  
    if (playerCount >= 3) {
      alert('Maximum number of players reached!');
      return;
@@ -149,7 +149,7 @@ function startgame() {
           container.style.opacity = 1;
       }, 150); 
   }, 150); // 500 milliseconds delay for the outline's fade-out transition
-  var elements = document.querySelectorAll("#score");
+  var elements = document.querySelectorAll(".scorepoint");
   document.getElementById("Player1").innerHTML = player1Name || "Player 1";
   document.getElementById("Player2").innerHTML = player2Name || "Player 2";
   document.getElementById("Player3").innerHTML = player3Name || "Player 3";
@@ -159,7 +159,30 @@ function startgame() {
   elements.forEach(function(element) {
       element.innerHTML = score;
   });
- 
+  var playerCount = document.querySelectorAll('.extra_players').length;
+ console.log(playerCount);
+
+  if(playerCount <=0){
+    document.getElementById("playercard1").style.display = "block";
+    document.getElementById("playercard2").style.display = "none";
+    document.getElementById("playercard3").style.display = "none";
+    document.getElementById("playercard4").style.display = "none";
+  }else if(playerCount <=1){
+    document.getElementById("playercard1").style.display = "block";
+    document.getElementById("playercard2").style.display = "block";
+    document.getElementById("playercard3").style.display = "none";
+    document.getElementById("playercard4").style.display = "none";
+  }else if(playerCount <= 2){
+    document.getElementById("playercard1").style.display = "block";
+    document.getElementById("playercard2").style.display = "block";
+    document.getElementById("playercard3").style.display = "block";
+    document.getElementById("playercard4").style.display = "none";
+  }else if(playerCount <= 3){
+    document.getElementById("playercard1").style.display = "block";
+    document.getElementById("playercard2").style.display = "block";
+    document.getElementById("playercard3").style.display = "block";
+    document.getElementById("playercard4").style.display = "block";
+  }
   
 }
 
@@ -197,3 +220,27 @@ function backtomenu() {
       }, 150); 
   }, 150); // 500 milliseconds delay for the outline's fade-out transition
 }
+
+
+//this below is the score system
+document.getElementById('addscore').addEventListener('click', addscore);
+
+function addscore(){
+  scoreinput = document.getElementById('scoreinput').value;
+  score = score - scoreinput;
+  var score1 = document.getElementById("score1");
+  var score2 = document.getElementById("score2");
+  var score3 = document.getElementById("score3");
+  var score4 = document.getElementById("score4");
+
+  let currentplayer = 1;
+
+  
+
+  score1.innerHTML = score;
+
+
+
+
+}
+

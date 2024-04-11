@@ -185,7 +185,7 @@ function startgame() {
     document.getElementById("playercard4").style.display = "block";
   }
   
-}
+
 
 
 document.getElementById('menu').addEventListener('click', backtomenu);
@@ -243,5 +243,6 @@ function addscore(){
 
 
 
+ }
 }
-
+}

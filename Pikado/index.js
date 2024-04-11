@@ -121,6 +121,7 @@ document.getElementById('startGameButton').addEventListener('click', updatePlaye
 //start game changes the ui from the menue to the scoring system done in the same html
 
 function startgame() {
+  if (score>0){
   var outline = document.getElementById('outline');
   var ribbonContainer = document.getElementById('ribonicontainer');
   var container = document.getElementById('container');
@@ -160,7 +161,9 @@ function startgame() {
       element.innerHTML = score;
   });
  
-  
+}else{
+  alert("caktoje gamemodin oj ti lop");
+}
 }
 
 

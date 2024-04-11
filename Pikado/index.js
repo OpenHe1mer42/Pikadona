@@ -149,6 +149,18 @@ function startgame() {
           container.style.opacity = 1;
       }, 150); 
   }, 150); // 500 milliseconds delay for the outline's fade-out transition
+  var elements = document.querySelectorAll("#score");
+  document.getElementById("Player1").innerHTML = player1Name || "Player 1";
+  document.getElementById("Player2").innerHTML = player2Name || "Player 2";
+  document.getElementById("Player3").innerHTML = player3Name || "Player 3";
+  document.getElementById("Player4").innerHTML = player4Name || "Player 4";
+
+  // Loop through each element and update its innerHTML
+  elements.forEach(function(element) {
+      element.innerHTML = score;
+  });
+ 
+  
 }
 
 
@@ -182,6 +194,6 @@ function backtomenu() {
       setTimeout(function() {
          
           outline.style.opacity = 1;
-      }, 100); 
-  }, 100); // 500 milliseconds delay for the outline's fade-out transition
+      }, 150); 
+  }, 150); // 500 milliseconds delay for the outline's fade-out transition
 }

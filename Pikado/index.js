@@ -161,28 +161,36 @@ function startgame() {
       element.innerHTML = score;
   });
   var playerCount = document.querySelectorAll('.extra_players').length;
- console.log(playerCount);
 
+  
   if(playerCount <=0){
+ 
     document.getElementById("playercard1").style.display = "block";
     document.getElementById("playercard2").style.display = "none";
     document.getElementById("playercard3").style.display = "none";
     document.getElementById("playercard4").style.display = "none";
+   
   }else if(playerCount <=1){
+   
     document.getElementById("playercard1").style.display = "block";
     document.getElementById("playercard2").style.display = "block";
     document.getElementById("playercard3").style.display = "none";
     document.getElementById("playercard4").style.display = "none";
+    
   }else if(playerCount <= 2){
+  
     document.getElementById("playercard1").style.display = "block";
     document.getElementById("playercard2").style.display = "block";
     document.getElementById("playercard3").style.display = "block";
     document.getElementById("playercard4").style.display = "none";
+
   }else if(playerCount <= 3){
+    
     document.getElementById("playercard1").style.display = "block";
     document.getElementById("playercard2").style.display = "block";
     document.getElementById("playercard3").style.display = "block";
     document.getElementById("playercard4").style.display = "block";
+  
   }
   
 
@@ -190,35 +198,37 @@ function startgame() {
 
 document.getElementById('menu').addEventListener('click', backtomenu);
 
+
+
 function backtomenu() {
+  let currentPlayer = 1;
+
   var outline = document.getElementById('outline');
   var ribbonContainer = document.getElementById('ribonicontainer');
   var container = document.getElementById('container');
-  
+
   // Add a CSS transition for a smooth fade-out effect for the outline
   ribbonContainer.style.transition = 'opacity 0.5s';
   container.style.transition = 'opacity 0.5s';
-  
+
   // Fade out the outline
   ribbonContainer.style.opacity = 0;
   container.style.opacity = 0;
 
   // After a short delay, hide the outline completely and fade in ribboncontainer and container
-  setTimeout(function() {
+  setTimeout(function () {
     ribbonContainer.style.display = 'none';
     container.style.display = 'none';
 
-      // Set ribbonContainer and container to display: flex
-      outline.style.display = 'block';
-      
+    // Set ribbonContainer and container to display: flex
+    outline.style.display = 'block';
 
-      // Add CSS transitions for a smooth fade-in effect for ribbonContainer and container
-      outline.style.transition = 'opacity 0.5s';
-  
-      setTimeout(function() {
-         
-          outline.style.opacity = 1;
-      }, 150); 
+    // Add CSS transitions for a smooth fade-in effect for ribbonContainer and container
+    outline.style.transition = 'opacity 0.5s';
+
+    setTimeout(function () {
+      outline.style.opacity = 1;
+    }, 150);
   }, 150); // 500 milliseconds delay for the outline's fade-out transition
 }
 
@@ -226,23 +236,81 @@ function backtomenu() {
 //this below is the score system
 document.getElementById('addscore').addEventListener('click', addscore);
 
-function addscore(){
-  scoreinput = document.getElementById('scoreinput').value;
-  score = score - scoreinput;
-  var score1 = document.getElementById("score1");
-  var score2 = document.getElementById("score2");
-  var score3 = document.getElementById("score3");
-  var score4 = document.getElementById("score4");
+function addscore() {
+  let scoreInput = document.getElementById('scoreinput').value;
+  updatePlayerScoreAndTurns(scoreInput);
+}
+let currentPlayer = 1;
+let remainingTurns = 3;
+let newPlayerCircles = document.querySelectorAll(`#playercard${currentPlayer} .circleouter`);
+    newPlayerCircles.forEach(circle => circle.classList.add('filled'));
 
-  let currentplayer = 1;
+function updatePlayerScoreAndTurns(scoreInput) {
+  
+  // Get the current player's score element and circles
+  let currentPlayerScore = document.getElementById(`score${currentPlayer}`);
+  let currentPlayerCircles = document.querySelectorAll(`#playercard${currentPlayer} .circleouter`);
+  let currentPlayercard = document.querySelectorAll(`#playercard${currentPlayer}`);
+  var playerCount = document.querySelectorAll('.extra_players').length;
 
+  // Check if the input is a valid number
+  let score = parseInt(scoreInput);
+  if (isNaN(score)) {
+    alert("Please enter a valid number.");
+    return;
+  }
+
+  // Update the score
+  score = Math.max(score, 0); // Ensure score is non-negative
+  score = Math.min(score, parseInt(currentPlayerScore.innerText)); // Ensure score doesn't exceed current score
+  currentPlayerScore.innerText = parseInt(currentPlayerScore.innerText) - score;
   
 
-  score1.innerHTML = score;
+  // Remove filled class from circles based on remaining turns
 
+  remainingTurns--;
+  
+  if (remainingTurns === 2) {
+    // Remove filled class from one of the outer circles
+    currentPlayerCircles[2].classList.remove('filled');
+  } else if (remainingTurns === 1) {
+    // Remove filled class from the second outer circle
+    currentPlayerCircles[1].classList.remove('filled');
+  }else if (remainingTurns === 0){
+    currentPlayerCircles[0].classList.remove('filled');
+  }
+  
 
+  // Check if the current player has finished their turns
+  if (remainingTurns === 0) {
+    // Move to the next player
+   
+    currentPlayer = (currentPlayer % (playerCount + 1)) + 1;
+    updateActivePlayer();
+    console.log("currentPlayer:" + currentPlayer);
+   
+    remainingTurns = 3;
+    
+    // Highlight the circles for the new current player
+    let newPlayerCircles = document.querySelectorAll(`#playercard${currentPlayer} .circleouter`);
+    newPlayerCircles.forEach(circle => circle.classList.add('filled'));
+  }
 
+  // Check if the game is over (current player's score reaches 0)
+  if (parseInt(currentPlayerScore.innerText) === 0) {
+    alert(`Congratulations! ${document.getElementById(`Player${currentPlayer}`).innerText} won!`);
+    // You may want to reset the game here
+  }
+}
+function updateActivePlayer() {
+  // Remove "active" class from all player cards
+  document.querySelectorAll('.playeroutline').forEach(card => card.classList.remove('active'));
 
- }
+  // Add "active" class to the current player's card
+  document.getElementById(`playercard${currentPlayer}`).classList.add('active');
+}
+
+}else{
+  alert("caktoje lojen kali")
 }
 }

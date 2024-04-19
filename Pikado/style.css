@@ -357,9 +357,9 @@ THE SECOND PAGE THE SCORING PAGE STARTS HERE ITS ALL BELOW  */
 }
 
 .playeroutline{
-  background-color: white;
-  width: 25vw;
-  height: 35%;
+  background-color: rgb(209, 209, 209);
+  width: 23vw;
+  height: 32%;
   min-height: 80px;
   padding: 10px;
   margin: 20px;
@@ -426,6 +426,7 @@ THE SECOND PAGE THE SCORING PAGE STARTS HERE ITS ALL BELOW  */
   width: 20%;
   border-radius: 50px;
   background-color: #ececec45;
+  text-align: center;
   font-size: 42px;
 }
 
@@ -458,6 +459,12 @@ THE SECOND PAGE THE SCORING PAGE STARTS HERE ITS ALL BELOW  */
 }
 
 .filled {
-  background-color: rgb(108, 196, 101);
+  background-color: rgb(132, 204, 127);
 }
 
+.playeroutline.active{
+  
+  width: 27vw;
+  height: 42%;
+  background-color: #ffffff;
+}
